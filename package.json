@@ -1,0 +1,32 @@
+{
+  "name": "taghash-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pulkit-debug/Taghash-Project.git"
+  },
+  "keywords": [
+    "taghash"
+  ],
+  "author": "Pulkit Verma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pulkit-debug/Taghash-Project/issues"
+  },
+  "homepage": "https://github.com/Pulkit-debug/Taghash-Project#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.7",
+    "express": "^4.18.0",
+    "flatpickr": "^4.6.13",
+    "mdbootstrap": "^4.20.0",
+    "mongoose": "^6.3.1",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7"
+  }
+}
