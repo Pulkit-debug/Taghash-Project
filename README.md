@@ -15,6 +15,8 @@ Tech Stack
 	<p>For the FrontEnd Part this project uses Html, CSS, Javascript and ejs template engine</p>
 	<h6>BackEnd.</h6>
 	<p>In the Backend this project uses Node.js and For DataBase MongoDb is used.</p>
+	<h5>Libraries used: </h5><p><a href="https://www.npmjs.com/package/body-parser">body-parser</a>, <a href="https://ejs.co/#promo">ejs-template engine</a>, <a href="https://expressjs.com/en/starter/installing.html">express.js</a>, <a href="https://mongoosejs.com/">mongoose</a>,
+	<a href="https://www.npmjs.com/package/nodemon">nodemon</a>, <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">Bootstrap</a></p>
 </ul>
   
   <h4>Brief Explanation of Project.</h4>
@@ -54,6 +56,7 @@ Tech Stack
   <h2>Running this project</h2>
   <ol type="I">
     <li><h5>First</h5> Make sure Node, MongoDb is installed on the System.</li>
+	  <li>Start Mongod service to that database can be accessed  ``` C:\Program Files\MongoDB\Server\5.0\bin\mongod  ```</li>
     <p style="text-decoration: underline;"><Strong>NOTE:</strong></p> <p>Node version used is: <a href="https://www.npackd.org/p/org.nodejs.NodeJS/14.17.4"><strong>v14.17.4</strong></a> and npm version used is: <a href="https://www.npmjs.com/package/npm/v/6.14.14"><strong>v6.14.14</strong></a></p>
     <li>Do git clone this repository or Download as a zip or fork the repository.</li>
     <li>Open the project folder in a code editor like VScode</li>
