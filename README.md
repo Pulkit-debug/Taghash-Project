@@ -37,24 +37,24 @@ Tech Stack
   
   
   <ul>
-    <li>All Data: Show all records./li>
+    <li>All Data: Show all records</li>
     <ul>
       <li>This page shows all the records that have been submitted till now.</li>
     </ul>
   </ul>
   
   <ul>
-    <li>Popup Window/li>
+    <li>Popup Window</li>
     <ul>
       <li>This is a Popwindow which appears after submitting a resopnse on the Home page.</li>
     </ul>
   </ul>
   
   
-  <h4>Running this project</h4>
+  <h2>Running this project</h2>
   <ol type="I">
     <li><h5>First</h5> Make sure Node, MongoDb is installed on the System.</li>
-    <p style="text-decoration: underline;"><Strong>NOTE:</strong></p> <p>Node version used is: <strong>v14.17.4</strong> and npm version used is: <strong>v6.14.14</strong></p>
+    <p style="text-decoration: underline;"><Strong>NOTE:</strong></p> <p>Node version used is: <a href="https://www.npackd.org/p/org.nodejs.NodeJS/14.17.4"><strong>v14.17.4</strong></a> and npm version used is: <a href="https://www.npmjs.com/package/npm/v/6.14.14"><strong>v6.14.14</strong></a></p>
     <li>Do git clone this repository or Download as a zip or fork the repository.</li>
     <li>Open the project folder in a code editor like VScode</li>
     <li>Open up a new terminal and type in ``` npm i ``` it will download all the dependencies required for this project.
