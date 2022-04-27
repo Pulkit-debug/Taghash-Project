@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+
+// creating record schema to be stored in the database.
 const recordSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -15,5 +17,7 @@ const recordSchema = new mongoose.Schema({
     },
 }, {timestamps: true});
 
+
+// exporting recordShema
 const Record = mongoose.model("Record", recordSchema);
 module.exports = Record;

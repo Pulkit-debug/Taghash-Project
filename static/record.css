@@ -1,0 +1,152 @@
+
+
+/* This file contains all css required for record page which will show all the records  */
+
+table {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+/* thead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+tbody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.styled-table {
+border-collapse: collapse;
+margin: 25px 0;
+font-size: 0.9em;
+font-family: sans-serif;
+/* min-width: 400px; */
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.styled-table thead tr {
+background-color: #009879;
+color: #ffffff;
+text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+padding: 12px 15px;
+}
+
+
+.styled-table tbody tr {
+border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+font-weight: bold;
+color: #009879;
+}
+
+
+
+
+
+
+body {
+font-family: 'lato', sans-serif;
+}
+.container {
+max-width: 1000px;
+margin-left: auto;
+margin-right: auto;
+padding-left: 10px;
+padding-right: 10px;
+}
+h2 {
+font-size: 26px;
+margin: 20px 0;
+text-align: center;
+}
+h2 small {
+font-size: 0.5em;
+}
+.responsive-table li {
+border-radius: 3px;
+padding: 25px 30px;
+display: flex;
+justify-content: space-between;
+margin-bottom: 25px;
+}
+.responsive-table .table-header {
+background-color: #95a5a6;
+font-size: 14px;
+text-transform: uppercase;
+letter-spacing: 0.03em;
+}
+.responsive-table .table-row {
+background-color: #fff;
+box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+.responsive-table .col-1 {
+flex-basis: 10%;
+}
+.responsive-table .col-2 {
+flex-basis: 40%;
+}
+.responsive-table .col-3 {
+flex-basis: 25%;
+}
+.responsive-table .col-4 {
+flex-basis: 25%;
+}
+@media all and (max-width: 767px) {
+.responsive-table .table-header {
+ display: none;
+}
+.responsive-table li {
+ display: block;
+}
+.responsive-table .col {
+ flex-basis: 100%;
+}
+.responsive-table .col {
+ display: flex;
+ padding: 10px 0;
+}
+.responsive-table .col:before {
+ color: #6c7a89;
+ padding-right: 10px;
+ content: attr(data-label);
+ flex-basis: 50%;
+ text-align: right;
+}
+}
+
+
+.data-btn {
+padding: 10px 20px;
+font-size: 20px;
+width: 50%;
+text-align: center;
+}
+#data-btn {
+display: flex;
+justify-content: center;
+align-items: center;
+}
