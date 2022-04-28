@@ -4,11 +4,32 @@ $( function() {
     $( "#date" ).datepicker();
   } );
 
-// // function 
-// function popup(clicked_id) {
-//   console.log("clicked");
-// // document.getElementById("submit-btn").addEventListener(onclick, () => {
-  
-//   // let myWindow = window.open("records.ejs", "", "width=200, height=100");
-// // })
-// }
+console.log("loading up")
+
+const ctx = document.getElementById("myChart").getContext("2d");
+
+const labels = ['YES', 'No'];
+
+const data = {
+  labels: labels,
+  datasets: [{
+    label: "Users Voting on particular Day!",
+    backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgb(255, 99, 132)',
+    data: [10, 5],
+  }]
+}
+
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+};
+
+const myChart = new Chart(ctx, config);

@@ -1,5 +1,7 @@
 // Requiring our recordSchema to use in logic.
 const Record = require("../Models/recordSchema")
+const db = require("../config/mongoose");
+const coll = db.collection("records");
 
 // rendering Home Page
 module.exports.home = function(req, res) {
@@ -52,7 +54,17 @@ module.exports.anotherResponse = function(req, res) {
 module.exports.allData = async function(req, res) {
 
     let records = await Record.find();
-    // console.log(records);
+
+    // creating pipeline for our aggregate query
+    const pipeline = [
+        { $group: { _id: "$date", count: { $sum: 1 } } }
+    ];
+
+    const aggData = coll.aggregate(pipeline);
+for await (const entity of aggData) {
+    console.log(entity);
+}
+    
     return res.render("records", {
         records: records,
     });
