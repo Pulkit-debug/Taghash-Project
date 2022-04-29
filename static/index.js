@@ -13,37 +13,37 @@ $( function() {
   } );
 
 
-  // need to get yesCount and noCount from homeController
+  // need to get yesCount and noCount from homeController that all.
 
-(function() {
-  const ctx = document.getElementById("myChart").getContext("2d");
+// (function() {
+//   const ctx = document.getElementById("myChart").getContext("2d");
 
-const labels = ['YES', 'No'];
+// const labels = ['YES', 'No'];
 
-const data = {
-  labels: labels,
-  datasets: [{
-    label: "Users Voting on particular Day!",
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
-    // just need to put value of yesCount and noCount here instead of 10, 5;
-    data: [10, 5],
-  }]
-}
+// const data = {
+//   labels: labels,
+//   datasets: [{
+//     label: "Users Voting on particular Day!",
+//     backgroundColor: 'rgb(255, 99, 132)',
+//     borderColor: 'rgb(255, 99, 132)',
+//     // just need to put value of yesCount and noCount here instead of 10, 5;
+//     data: [10, 5],
+//   }]
+// }
 
-const config = {
-  type: 'bar',
-  data: data,
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-};
+// const config = {
+//   type: 'bar',
+//   data: data,
+//   options: {
+//     scales: {
+//       y: {
+//         beginAtZero: true
+//       }
+//     }
+//   }
+// };
 
-const myChart = new Chart(ctx, config);
+// const myChart = new Chart(ctx, config);
 
-// console.log(locals.yesCount);
-})();
+// // console.log(locals.yesCount);
+// })();

@@ -99,30 +99,31 @@ module.exports.allData = async function(req, res) {
     var noCount = totalCount - yesCount;
 
     console.log("Yes count: " + yesCount + " no count: " + noCount);
-    // res.locals = totalCount;
-    // res.locals.totalCount = totalCount;
-    // res.locals.yesCount = yesCount;
-    // console.log(res.locals.totalCount);
-    globalThis.yesCount = yesCount;
-    globalThis.noCount = noCount;
 
+    // Filtering our dates in order to not show repeated values in the selection tag----------
+    var dateSet = [];
+    for(record of records) {
+        dateSet.push(record.date);
+    }
 
-    // ---------------------------------------------------
+    const filterRecords = dateSet.filter((data, index) => {
+        return dateSet.indexOf(data) === index;
+    });
+
     
+    // console.log("filter values: ", filterRecords);
 
-    // global.localStorage.setItem("yesCount", yesCount);
-    // global.localStorage.setItem("noCount", noCount);
+
+    // --------------------------------
     
     return res.render("records", {
+        filterRecords: filterRecords,
         records: records,
+        yesCount: yesCount,
+        noCount: noCount,
     });
 }
 
-    // var noCount = noData;
-
-// function giveCount(yesData, noData) {
-    
-// }
 
 // this function will load up the popup page after submitting a resposne.
 module.exports.resSub = function(req, res) {
@@ -134,8 +135,6 @@ module.exports.getDate = function(req, res) {
     var myDate = req.body.vdate;
     return res.render("test");
 }
-
-
 
 
 // module.exports.noData = global.noCount;
