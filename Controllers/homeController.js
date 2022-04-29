@@ -91,14 +91,14 @@ module.exports.allData = async function(req, res) {
     var yesCount = 0;
     const aggDataYes = await coll.aggregate(yesCountOnDate);
     for await (const entity of aggDataYes) {
-        console.log(entity);
+        // console.log(entity);
         
         yesCount += 1;
     }
 
     var noCount = totalCount - yesCount;
 
-    console.log("Yes count: " + yesCount + " no count: " + noCount);
+    // console.log("Yes count: " + yesCount + " no count: " + noCount);
 
     // Filtering our dates in order to not show repeated values in the selection tag----------
     var dateSet = [];
@@ -111,7 +111,6 @@ module.exports.allData = async function(req, res) {
     });
 
     
-    // console.log("filter values: ", filterRecords);
 
 
     // --------------------------------
