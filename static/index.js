@@ -1,12 +1,22 @@
+// const {homeController} = require("../Controllers/homeController.js");
+
+// const yesCount = homeController.yesData;
+// const noCount = homeController.noCount;
+
+
+
+
 
 // JQuery function to get the date on the homepage.
 $( function() {
     $( "#date" ).datepicker();
   } );
 
-console.log("loading up")
 
-const ctx = document.getElementById("myChart").getContext("2d");
+  // need to get yesCount and noCount from homeController
+
+(function() {
+  const ctx = document.getElementById("myChart").getContext("2d");
 
 const labels = ['YES', 'No'];
 
@@ -33,3 +43,6 @@ const config = {
 };
 
 const myChart = new Chart(ctx, config);
+
+// console.log(locals.yesCount);
+})();

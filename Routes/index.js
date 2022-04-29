@@ -15,10 +15,12 @@ router.post("/vote", homeController.vote)
 router.get("/afterSubmit", homeController.anotherResponse);
 
 // route to show all the records present in the database.
-router.get("/data", homeController.allData);
+router.post("/data", homeController.allData);
 
 // route to show the popup window after submitting response.
 router.get("/resSubmit", homeController.resSub);
+
+router.post("/getDate", homeController.getDate);
 
 
 module.exports = router;

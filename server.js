@@ -1,10 +1,14 @@
+
 const express = require("express");
 const app = express();
 const db = require("./config/mongoose");
+
+
+
 // using bodyparser to parse our form data.
 const bodyParser = require("body-parser");
-const flatpicker = require("flatpickr");
 
+const flatpicker = require("flatpickr");
 const path = require("path");
 const PORT = 5000;
 
@@ -23,6 +27,13 @@ app.set("view engine", "ejs");
 // parsing the data gathered from form using body-parser
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({extended: true}));
+
+
+function middle(req, res, next) {
+    locals = res.locals;
+    next();
+}
+
 
 
 // Setting up our routes 

@@ -43,6 +43,7 @@
         <option value="no">NO</option>
       </select>
 
+
       <label>Please Enter your date of vote submission.</label>
       <input type="text" id="date" name="date" placeholder="dd/mm/yyyy">
       <label id="errorLabel"></label>
@@ -50,7 +51,7 @@
       <input type="submit" onClick="popWindow(this.id)" id="submit-btn" value="Submit">
     </form>
   </div>
-  <form action="/data" method="get">
+  <form action="/data" method="POST">
     <div id="data-btn">
       <button type="submit" class="btn data-btn btn-outline-success">All Data</button>
     </div>

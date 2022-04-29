@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
 //connecting to our mongodb database
 // 27017 is the default port that mongodb provides followed by database name

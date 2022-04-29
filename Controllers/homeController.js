@@ -1,6 +1,7 @@
 // Requiring our recordSchema to use in logic.
 const Record = require("../Models/recordSchema")
 const db = require("../config/mongoose");
+const { resetWatchers } = require("nodemon/lib/monitor/watch");
 const coll = db.collection("records");
 
 // rendering Home Page
@@ -50,27 +51,92 @@ module.exports.anotherResponse = function(req, res) {
 }
 
 
+
 // This function will bring up the data page wherein all the records that are submitted will be displayed.
 module.exports.allData = async function(req, res) {
 
     let records = await Record.find();
-
+    // console.log(records);
     // creating pipeline for our aggregate query
-    const pipeline = [
-        { $group: { _id: "$date", count: { $sum: 1 } } }
+    
+   // -----Code for getting the date to show yesCount and noCount graph ---------------
+    
+    const totalRecordsOnDate = [
+        {
+            $group: { _id: "$date", count: { $sum: 1 } } 
+        
+        }
+    ]   
+
+    
+    const aggDataTotal = await coll.aggregate(totalRecordsOnDate);
+    var totalCount = 0;
+
+    for await (const entity of aggDataTotal) {
+        if(entity._id == req.body.vdate) totalCount = entity.count;
+    }
+
+
+    const yesCountOnDate = [
+        {
+            $match: {date: req.body.vdate}
+        },
+        {
+            $match: {vote: "yes"}
+        }
+        
+        // { $group: { _id: "$vote", count: { $sum: 1} } }
     ];
 
-    const aggData = coll.aggregate(pipeline);
-for await (const entity of aggData) {
-    console.log(entity);
-}
+    var yesCount = 0;
+    const aggDataYes = await coll.aggregate(yesCountOnDate);
+    for await (const entity of aggDataYes) {
+        console.log(entity);
+        
+        yesCount += 1;
+    }
+
+    var noCount = totalCount - yesCount;
+
+    console.log("Yes count: " + yesCount + " no count: " + noCount);
+    // res.locals = totalCount;
+    // res.locals.totalCount = totalCount;
+    // res.locals.yesCount = yesCount;
+    // console.log(res.locals.totalCount);
+    globalThis.yesCount = yesCount;
+    globalThis.noCount = noCount;
+
+
+    // ---------------------------------------------------
+    
+
+    // global.localStorage.setItem("yesCount", yesCount);
+    // global.localStorage.setItem("noCount", noCount);
     
     return res.render("records", {
         records: records,
     });
 }
 
+    // var noCount = noData;
+
+// function giveCount(yesData, noData) {
+    
+// }
+
 // this function will load up the popup page after submitting a resposne.
 module.exports.resSub = function(req, res) {
     return res.render("popup");
 }
+
+
+module.exports.getDate = function(req, res) {
+    var myDate = req.body.vdate;
+    return res.render("test");
+}
+
+
+
+
+// module.exports.noData = global.noCount;
+// module.exports.yesData = global.yesCount;
