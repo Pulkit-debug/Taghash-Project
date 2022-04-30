@@ -94,8 +94,12 @@ const data = {
   labels: labels,
   datasets: [{
     label: "Users Voting on particular Day!",
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
+    backgroundColor: [
+            'rgba(255, 0, 0, 0.6)', 
+            'rgba(30, 5, 40, 0.6);',
+        ],
+    // backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgb(255, 99, 132, 0.5)',
     data: [<%=yesCount%>, <%=noCount%>],
   }]
 }
